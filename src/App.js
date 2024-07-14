@@ -6,9 +6,6 @@ import ServiceRequestList from './Components/ServiceRequestList';
 const App = () => {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <h1>Service Request Management</h1>
-      </header> */}
       <main>
         <ServiceRequestForm />
         {/* <ServiceRequestList /> */}

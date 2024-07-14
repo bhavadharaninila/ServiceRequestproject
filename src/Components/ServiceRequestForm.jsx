@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 // import { API, graphqlOperation } from 'aws-amplify';
 // import { createServiceRequest } from './graphql/mutations';
+import ServiceRequestList from './ServiceRequestList';
 
 const ServiceRequestForm = () => {
   const [formState, setFormState] = useState({
@@ -13,12 +14,19 @@ const ServiceRequestForm = () => {
     contactInformation: '',
     location: ''
   });
+  const updatedDetails = useRef(formState)
+  const [showDetails, setShowDetails]  = useState(false)
 
   const handleChange = (e) => {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value
     });
+  };
+  const handleClick = () => {
+    console.log("formState:", formState);
+    setShowDetails(true);
+   updatedDetails.current = formState
   };
 
 //   const handleSubmit = async (e) => {
@@ -42,6 +50,7 @@ const ServiceRequestForm = () => {
 //   };
 // onSubmit={handleSubmit}
   return (
+    <>
     <div>
     <h1>Service Request Management</h1>
     <h3>Request Details</h3>
@@ -59,9 +68,16 @@ const ServiceRequestForm = () => {
       <label className='request-detail-col'>Reporter Name : <input name="reporterName" value={formState.reporterName} onChange={handleChange}  required /></label>
       <label className='request-detail-col'> Contact Information : <input name="contactInformation" value={formState.contactInformation} onChange={handleChange} required />  </label>
       <label className='request-detail-col'> Location :  <input name="location" value={formState.location} onChange={handleChange} required /> </label>
-      <button type="submit">Create Service Request</button>
+      <button type="submit" onClick={handleClick} >Create Service Request</button>
       </form>
     </div>
+    
+  <ServiceRequestList
+    updatedForm = {updatedDetails}
+    showDetails = {showDetails}
+    setShowDetails = {setShowDetails}
+    />
+    </>
   );
 };
 
