@@ -4,25 +4,23 @@ import React, { useEffect, useState } from 'react';
 
 
 const ServiceRequestList = (props) => {
-  const { updatedForm } = props;
+  const { updatedForm, showDetails, setShowDetails } = props;
  
   return (
-<div>
-    <h2>Service Requests</h2>
+<div >
+    {showDetails && <><h2>Service Requests</h2>
       <ul>
-       
           <li key={updatedForm.current.id}>
             <h3>{updatedForm.current.name}</h3>
             <p>{updatedForm.current.description}</p>
-            <p>Created on: {updatedForm.current.creationDate}</p>
-            <p>Severity: {updatedForm.current.severity}</p>
-            <p>Resolution Date: {updatedForm.current.resolutionDate}</p>
-            <p>Reported by: {updatedForm.current.reporterName}</p>
-            <p>Contact: {updatedForm.current.contactInformation}</p>
-            <p>Location: {updatedForm.current.location}</p>
+            <p><h4>Created on:</h4> {updatedForm.current.creationDate}</p>
+            <p><h4>Severity:</h4> {updatedForm.current.severity}</p>
+            <p><h4>Resolution Date:</h4> {updatedForm.current.resolutionDate}</p>
+            <p><h4>Reported by:</h4> {updatedForm.current.reporterName}</p>
+            <p><h4>Contact: </h4>{updatedForm.current.contactInformation}</p>
+            <p><h4>Location:</h4> {updatedForm.current.location}</p>
           </li>
-        
-      </ul>
+      </ul></>}
     </div>
   );
 };

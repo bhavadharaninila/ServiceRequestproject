@@ -53,7 +53,7 @@ form {
   flex-wrap: wrap;
   align-content: center !important;
 }
-.request-detail-col{
+.request-detail-col {
   /* display: flex;
   justify-content: space-between;
   min-width: 450px;
@@ -66,7 +66,9 @@ form {
   font-size: 13px;
 }
 
-input, textarea, button {
+input,
+textarea,
+button {
   margin: 5px 0px 10px 0px;
   padding: 10px;
   border-color: black;
@@ -76,7 +78,7 @@ input, textarea, button {
 }
 
 button {
-  background-color: #61dafb;
+  background-color: #26a62c;
   border: none;
   cursor: pointer;
 }
@@ -91,4 +93,20 @@ li {
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  flex-wrap: wrap;
+  align-content: center !important;
+}
+
+p {
+  min-width: 400px;
+  justify-content: space-evenly;
+  display: inline-flex;
+  align-items: center;
+  height: 10px;
+}
+.clear-button {
+  background-color: rgb(161, 159, 159);
 }
