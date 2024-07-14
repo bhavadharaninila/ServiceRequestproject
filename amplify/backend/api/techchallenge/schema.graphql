@@ -1,0 +1,11 @@
+type ServiceRequest @model {
+  id: ID!
+  name: String!
+  description: String!
+  creationDate: AWSDate!
+  severity: String!
+  resolutionDate: AWSDate
+  reporterName: String!
+  contactInformation: String!
+  location: String!
+}

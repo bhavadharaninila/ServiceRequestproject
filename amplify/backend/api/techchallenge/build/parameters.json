@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "techchallenge",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-techchallenge-dev-195607-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/9b46c08daeb39bd990065a056e19044f50d2a694"
+}

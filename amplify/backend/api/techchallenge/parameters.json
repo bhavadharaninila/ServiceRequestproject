@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "techchallenge",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}
